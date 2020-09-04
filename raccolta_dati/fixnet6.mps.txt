@@ -1,0 +1,2 @@
+MIP: fixnet6.mps
+-- Not very interesting --

@@ -1,0 +1,2 @@
+MIP: a1c1s1.mps
+-- Not very interesting --

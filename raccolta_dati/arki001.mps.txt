@@ -1,0 +1,2 @@
+MIP: arki001.mps
+-- Not very interesting --

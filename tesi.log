@@ -1,0 +1,237 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.10)  2 SEP 2020 12:20
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/_starkiller/Desktop/tesi/tesi.tex
+(/home/_starkiller/Desktop/tesi/tesi.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-03> (/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/05/13 3.44 The Babel package
+ (/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/05/13 3.44 Babel common definitions
+\babel@savecnt=\count176
+\U@D=\dimen135
+\l@babelnohyphens=\language86
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count177
+ (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2020/05/21 v.1.4.04 Italian support for the babel system
+\it@lettering=\count178
+\it@doublequoteactive=\count179
+\it@ISOcompliance=\count180
+)) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count181
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count182
+\l__pdf_internal_box=\box45
+) (/home/_starkiller/Desktop/tesi/tesi.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Info: Redefining \it@ocap on input line 14.
+LaTeX Info: Redefining \it@ccap on input line 14.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count183
+\scratchdimen=\dimen138
+\scratchbox=\box46
+\nofMPsegments=\count184
+\nofMParguments=\count185
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count186
+\MPscratchDim=\dimen139
+\MPnumerator=\count187
+\makeMPintoPDFobject=\count188
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+<immagini/logo.png, id=1, 250.9375pt x 218.8175pt>
+File: immagini/logo.png Graphic file (type png)
+<use immagini/logo.png>
+Package pdftex.def Info: immagini/logo.png  used on input line 20.
+(pdftex.def)             Requested size: 125.46843pt x 109.40848pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 35.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 35.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 35.
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/_starkiller/Desktop/tesi/immagini/logo.png>] [2
+
+] (/home/_starkiller/Desktop/tesi/tesi.toc)
+\tf@toc=\write3
+ [3] [4
+
+] (/home/_starkiller/Desktop/tesi/tesi.lof)
+\tf@lof=\write4
+ [5] [6
+
+] [1
+
+] [2
+
+]
+Capitolo 1.
+<immagini/mip_scheme.png, id=39, 301.125pt x 93.34875pt>
+File: immagini/mip_scheme.png Graphic file (type png)
+<use immagini/mip_scheme.png>
+Package pdftex.def Info: immagini/mip_scheme.png  used on input line 79.
+(pdftex.def)             Requested size: 210.78606pt x 65.34366pt.
+[1
+
+ </home/_starkiller/Desktop/tesi/immagini/mip_scheme.png>]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 98.
+
+<immagini/cutting_planes.png, id=46, 221.628pt x 210.5466pt>
+File: immagini/cutting_planes.png Graphic file (type png)
+<use immagini/cutting_planes.png>
+Package pdftex.def Info: immagini/cutting_planes.png  used on input line 136.
+(pdftex.def)             Requested size: 155.13853pt x 147.3816pt.
+[2] [3 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
+<immagini/cricca.png, id=59, 220.825pt x 216.81pt>
+File: immagini/cricca.png Graphic file (type png)
+<use immagini/cricca.png>
+Package pdftex.def Info: immagini/cricca.png  used on input line 167.
+(pdftex.def)             Requested size: 110.41222pt x 108.40472pt.
+ [4 </home/_starkiller/Desktop/tesi/immagini/cricca.png>]
+Capitolo 2.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Overfull \hbox (18.22906pt too wide) in paragraph at lines 211--274
+ [] 
+ []
+
+<immagini/output_example.png, id=74, 575.14874pt x 434.62375pt>
+File: immagini/output_example.png Graphic file (type png)
+<use immagini/output_example.png>
+Package pdftex.def Info: immagini/output_example.png  used on input line 285.
+(pdftex.def)             Requested size: 287.57367pt x 217.31134pt.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 299--310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--310
+
+ []
+
+[8 </home/_starkiller/Desktop/tesi/immagini/output_example.png>] [9] [10
+
+]
+Capitolo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--337
+
+ []
+
+[11]
+<immagini/chart_agg.jpg, id=95, 578.16pt x 433.62pt>
+File: immagini/chart_agg.jpg Graphic file (type jpg)
+<use immagini/chart_agg.jpg>
+Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 340.
+(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
+
+Overfull \hbox (14.70924pt too wide) in paragraph at lines 340--341
+ [][] 
+ []
+
+[12 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
+Capitolo 4.
+[13
+
+] [14
+
+]
+Capitolo 5.
+[15] (/home/_starkiller/Desktop/tesi/tesi.aux) ) 
+Here is how much of TeX's memory you used:
+ 2617 strings out of 480478
+ 35329 string characters out of 5905959
+ 300776 words of memory out of 5000000
+ 18619 multiletter control sequences out of 15000+600000
+ 547925 words of font info for 51 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,8n,26p,827b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
+Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (23 pages, 417128 bytes).
+PDF statistics:
+ 178 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,2 @@
+MIP: timtab2.mps
+-- Not very interesting --

@@ -1,0 +1,2 @@
+MIP: set1ch.mps
+-- Not very interesting --

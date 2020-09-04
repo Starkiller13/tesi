@@ -1,0 +1,2 @@
+MIP: nsrand-ipx.mps
+-- Not very interesting --
