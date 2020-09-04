@@ -205,8 +205,8 @@ Successivamente sono stati eseguiti per ogni variabile binaria il rilassamento i
 Alla fine sono stati raggruppati i risultati per ogni vincolo di clique e salvati in un file di testo. 
 La prima parte dell’algoritmo è stata fondamentale per scartare in partenza dei MIP senza 
 questi vincoli e quindi evitare elaborazioni inutili. Di seguito un resoconto sui problemi 
-considerati:\pagebreak
-
+considerati:
+\clearpage
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
@@ -313,6 +313,9 @@ dell'Informazione tramite il sistema di somministrazione dei job SLURM:
 processare un numero così elevato di rilassamenti lineari non risulta possibile con soluzioni 
 economiche e questi strumenti messi a disposizione dal DEI sono stati fondamentali per 
 la riuscita di questo progetto.
+\\
+Per l'analisi dei dati è stato utilizzato il linguaggio di programmazione Python con il supporto delle 
+librerie Numpy e MatplotLib.
 
 \chapter{Risultati}
 Di seguito alcune considerazioni sui dati ottenuti. Essendo questa un'analisi preliminare della strategia
@@ -323,9 +326,11 @@ questa strategia ha delle possibilità applicative.
 Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. Il primo indicatore
 utilizzato per verificare il potenziale della SBCC è il seguente: per ogni vincolo di clique 
 $j\:\:\epsilon\:\:Cliques$ è stato calcolato un valore
-\[ s\textsubscript{j} = \sqrt[n]{\prod_{i=1}^{n} (R(x\textsubscript{i}=1)-R\textsubscript{ref}) }\] 
+\[ s\textsubscript{j} = \sqrt[n]{\prod_{i=1}^{n\textsubscript{j}} (R(x\textsubscript{i}=1)-R\textsubscript{ref}) }\] 
 in cui $R(x\textsubscript{i})$ è il valore del rilassamento fissando a 1 la variabile $x\textsubscript{i}$
-del vincolo e $R\textsubscript{ref}$ è il valore del rilassamento del problema iniziale.
+del vincolo, $R\textsubscript{ref}$ è il valore del rilassamento del problema iniziale e$n\textsubscript{j}$ è il 
+numero di variabili comprese nel vincolo di clique. Nel caso il vincolo di clique sia di <= nella 
+produttoria verrà inserito un ulteriore termine $(R(x\textsubscript{1}=0, .., x\textsubscript{n}=0)- R\textsubscript{ref})$.
 Per confronto ad ogni variabile binaria $k\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
 \[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}\] 
 Si può notare che nel caso uno dei valori nella produttoria è 0 allora lo score sarà 0, per ovviare a ciò
@@ -342,24 +347,34 @@ sulle variabili binarie.\\\pagebreak
     \label{fig:ratio}
 \end{figure}
 Si può osservare che in molti dei problemi la separazione che va a crearsi è migliore della miglior separazione 
-tramite Strong Branching delle variabili coinvolte nei vincoli. 
+tramite Strong Branching delle variabili coinvolte nei vincoli. \\
+I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
+8 volte più forte di una separazione traqmite SB. \pagebreak
 \section{Mod011.mps}
+A campione è stato analizzato il problema mod011.mps. La taglia dell'istanza considerata è relativamente piccola
+e non necessita un'aggregazione di dati per essere analizzata. Dal file di output creato è stato realizzato un grafico
+in cui ogni vincolo di clique del problema è stato messo in confronto con la migliore separazione ottenuta dalle variabili
+contenute nel vincolo stesso tramite SB[Figura 3.2]. L'indice considerato è lo stesso della sezione precedente.\\
+\begin{figure}[ht]
+    \centering
+    \includegraphics [scale = 0.7]{chart_exp1_mod011}
+    \caption{Mod011 chart}
+    \label{fig:mod011}
+\end{figure}\\
+Si può notare che in relazione alle variabili presenti nel vincolo tutte le separazioni tramite clique risultano più forti 
+e che rispetto alla migliore separazione solo 2 vincoli su 16 risultano inferiori.
+\\
 \chapter{Conclusioni}
-\chapter{Bibliografia}
+\addcontentsline{toc}{chapter}{\bibname}
+\renewcommand{\bibname}{Bibliografia/Sitografia}
+\begin{thebibliography}{100}
+    \bibitem{} Lezioni di Ricerca Operativa, M. Fischetti, 2018;
+    \bibitem{} Constraint Integer Programming, T. Achterberg, 2007;
+    \bibitem{} Cplex User Manual: \\ 
+    $https://www.ibm.com/support/knowledgecenter/SSSA5P_12.7.1/
+    \\ilog.odms.studio.help/pdf/usrcplex.pdf$
+\end{thebibliography}
 
-%INSERIRE FIGURA
-%\begin{figure}[h] --> ci sono varie lettere a seconda della posizione, es t=top,b=bottom, h=here
-%\begin{center}
-%\includegraphics[width=1.0\columnwidth]{foto.jpg}
-%\caption{Descrizione immagine}
-%\end{center}
-%\end{figure}
 
-
-
-%per fare un elenco puntato
-%\begin{itemize} --> enumerate per elenchi numerati
-%\item per ogni punto
-%\end{itemize}
 
 \end{document}
