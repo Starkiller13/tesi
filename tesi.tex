@@ -15,9 +15,19 @@
 
 \begin{titlepage}
  
+\begin{minipage}{0.4\textwidth}
+    \begin{flushleft}
+        \includegraphics[scale=.7]{logo_unipd.png}
+    \end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+    \begin{flushright}
+        \includegraphics[scale=.5]{logo_dei.png}
+    \end{flushright}
+\end{minipage}
+\\[1.5cm] 
+
 \begin{center}
-     
-\includegraphics[scale=.5]{logo}
 
 \textsc{\LARGE Università degli Studi di Padova}\\[1.5cm]
 
@@ -62,12 +72,27 @@ La tesi si è sviluppata attorno all’idea di una raccolta dati
 dalla libreria di problemi Miplib2003 concentrandosi principalmente
 su problemi MIP in cui sono presenti vincoli di clique. 
 Il diverso peso dell’attribuzione dei valori 0 e 1 nei vincoli di 
-questa tipologia suggerisce la possibilità che fare strong branching 
-sulle variabili dei vincoli di clique sia una buona idea.
+questa tipologia suggerisce la possibilità che una strategia di branching basata 
+su questi vincoli possa dare buoni risultati.
+\\L'aggregazione dei dati ottenuti e le considerazioni ottenute da un'analisi 
+qualitativa e quantitativa dei risultati portano a concludere che una strategia
+di questo tipo potrebbe avere del potenziale.
 
 \mainmatter
 
 \chapter{Introduzione}
+La performance di un algoritmo branch and bound nella programmazione lineare intera mista (MIP)
+dipende molto dalla qulità del lower bound ottenuto nella ricerca. Un modo per migliorare questo bound
+è quello di introdurre dei tagli nel rilassamento lineare che linitino lo spazio delle soluzioni tenendo traccia
+de vincoli di interezza del problema di partenza e che riducano il gap tra lower bound e incumbent(per dimostrare che la soluzione sia ottima).
+In generale la generazione di tagli efficaci nella riduzione del politopo/poliedro è particolarmente 
+complicata: in questa tesi si è cercato di considerare dei vincoli particolari, detti vincoli di clique,
+che data la loro particolare struttura permettono di migliorare il dual bound e contemporaneamente escludere 
+soluzioni non intere. Lo scopo è quello di valutare, come nello Strong Branching (SB), quale vincolo porti un 
+miglioramento/separazione più forte tramite una fase di scoring precedente al branching. La strategia
+ipotizzata è stata chiamata Strong Branching on Clique Constraints (abbreviata SBCC).
+
+\section{MIP}
 Nella raccolta dati creata sono stati presi in considerazione dei problemi
 MIP raccolti nella libreria di problemi Miplib2003; questa classe di problemi
 di programmazione lineare sono caratterizzati, oltre alla presenza di una funzione
@@ -161,7 +186,7 @@ vincoli di clique. Posso esprimere un vincolo di clique come segue:
 
 Questi vincoli possono essere rappresentati come una cricca (clique in inglese) ossia un grafo 
 non orientato \[G = (E, V)\] in cui per ogni coppia di vertici \[x,y\:\epsilon\:V\] esiste 
-un arco \[e\:\epsilon\:E\] che li congiunge.
+un arco \[e\:\epsilon\:E\] che li congiunge.\pagebreak
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.5]{cricca.png}
@@ -176,16 +201,15 @@ non sono univocamente definite. Su questa osservazione si basa la tesi.
 \chapter{Strong Branching on Clique Constraint}
 \section{L'idea}
 I vincoli di clique, come visto nel capitolo precedente, hanno un marcato sbilanciamento quando si 
-tratta di definire quale variabile fissare a 1; da questa considerazione è scaturita questa raccolta dati, 
+tratta di fissare una variabile; da questa considerazione è scaturita questa raccolta dati, 
 che si prefigge il compito di raccogliere del materiale per una possibile futura implementazione di una 
 strategia di branching sui vincoli di clique. La SBCC si propone di testare, come nel semplice Strong Branching,
-quale dei soggetti presi in causa porta un miglioramento nella f.o. significativo per creare un albero di
-sottoproblemi di grandezza ridotta. A differenza del semplice Strong Branching il problema iniziale non verrà diviso 
-in 2 sottoproblemi diversa ma in $n$ sottoproblemi dove $n$ è il numero delle variabili del vincolo.\\
+quale dei vincoli di clique del problema porta un miglioramento nella f.o.. 
 L'obiettivo rimane comunque quello di creare una separazione più forte di quella data dal singolo Strong Branching 
-nel tentativo portare il valore della f.o. il più vicino possibile al valore dell'incumbent.
+nel tentativo portare il valore della f.o. il più vicino possibile al valore dell'incumbent e quindi dimostrare
+che la soluzione per ora migliore sia quella ottima.
 L'approccio di utilizzare il miglior risultato conosciuto al momento è naturalmente un approccio
- euristico alla pari della strategia Strong Branching.
+euristico alla pari della strategia Strong Branching.
 La strategia va a creare molti più nodi per ogni separazione rispetto a S.B. ma si può presumere che 
 molti di questi nodi non verranno mai esporati e che saranno eliminati nella fase di pruning; oltre a ciò
 lo Strong Branching fissa solo una variabile per ogni iterazione mentre la nuova strategia andrebbe a fissare 
@@ -200,13 +224,17 @@ nella libreria Miplib2003. L’algoritmo, scritto in C++ sfruttando le API del r
 commerciale CPLEX 12.10 di IBM, si è concentrato inizialmente in un esame preliminare del 
 problema P in ingresso in cui viene verificata la presenza di vincoli di clique tra i vincoli di P. 
 Successivamente sono stati eseguiti per ogni variabile binaria il rilassamento in altro ed in basso 
-(UB  = 0 e LB = 1) e sono stati salvati i valori della funzione obiettivo. 
-%Perchè solo variabili binarie?
+(UB  = 0 e LB = 1) e sono stati salvati i valori della funzione obiettivo. \\
+Sono state considerate solo le variabili binarie presenti nei vincoli di clique: un confronto globale
+su tutte le variabili intere sarebbe stato molto costoso computazionalmente e non avrebbe messo bene 
+in luce la convenienza dell'utilizzare la SBCC rispetto al semplice SB nello stesso campione di variabili.\\
 Alla fine sono stati raggruppati i risultati per ogni vincolo di clique e salvati in un file di testo. 
 La prima parte dell’algoritmo è stata fondamentale per scartare in partenza dei MIP senza 
-questi vincoli e quindi evitare elaborazioni inutili. Di seguito un resoconto sui problemi 
-considerati:
+questi vincoli e quindi evitare elaborazioni inutili.
 \clearpage
+\pagebreak 
+Di seguito un resoconto sui problemi considerati:
+
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
