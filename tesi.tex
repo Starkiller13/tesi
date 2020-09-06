@@ -317,17 +317,17 @@ della strategia di branching ipotizzata. \\
 
 \subsection{Miplib2003}
 I problemi da cui sono state estratte le informazioni sono contenuti nella libreria Miplib2003.
-La libreria si configura come una collezione di 60 problemi MIP di natura varia ideali per avrebbe
+La libreria si configura come una collezione di 60 problemi MIP di natura varia ideali per avere
 un insieme eterogeneo di istanze. La scelta di una libreria datata (i problemi della libreria 
 sono stati formulati dal 1999 al 2003) è stata effettuata consapevolmente data la necessità di avere 
 istanze già risolte (in gran parte) e per la presenza di problemi di piccola taglia utili per fare 
 delle osservazioni dettagliate.
 
 \section{Software utilizzati}
-Per raccogliere le informazioni dalla libreria Miplib2003 è stato utilizzato il risolutore 
-commerciale CPLEX di IBM. Il programma si distingue in questo ramo 
-dell'informatica per le buone performance della sua implementazione dell'algoritmo del 
-simplesso e per le molte features messe a disposizione all'utente finale.\\
+Per raccogliere le informazioni dalla libreria Miplib2003 è stato utilizzato CPLEX si IBM.
+Il programma si distingue in questo ramo dell'informatica per le buone performance della 
+sua implementazione dell'algoritmo del simplesso e per le molte features messe a 
+disposizione all'utente finale.\\
 Il programma che è stato implementato per la raccolta dati è stato scritto in C++ utilizzando 
 le API del ramo Concert di CPLEX. Queste API, anche se non molto intuitive,
 si sono dimostrate efficaci per l'implementazione del codice, permettendo all'utente di 
@@ -347,8 +347,8 @@ librerie Numpy e MatplotLib.
 
 \chapter{Risultati}
 Di seguito alcune considerazioni sui dati ottenuti. Essendo questa un'analisi preliminare della strategia
-non sono stati raccolti i risultati a livello prestazionale ma semplicemente dei $numeri$ utili a capire se 
-questa strategia ha delle possibilità applicative.
+non sono stati raccolti i risultati a livello prestazionale ma semplicemente dei grafici e dei numeri 
+utili a capire se questa strategia ha delle possibilità applicative.
 
 \section{Considerazioni sui dati ottenuti}
 Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. Il primo indicatore
@@ -361,28 +361,29 @@ numero di variabili comprese nel vincolo di clique. Nel caso il vincolo di cliqu
 produttoria verrà inserito un ulteriore termine $(R(x\textsubscript{1}=0, .., x\textsubscript{n}=0)- R\textsubscript{ref})$.
 Per confronto ad ogni variabile binaria $k\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
 \[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}\] 
-Si può notare che nel caso uno dei valori nella produttoria è 0 allora lo score sarà 0, per ovviare a ciò
-è stato considerato il valore 0.01 al posto di 0.\\
+Si può notare che nel caso uno dei valori nella produttoria è 0 allora lo score sarà 0; per ovviare a ciò il 
+valore 0 è stato sostituito con 0.01.\\
 Per ogni problema è stato raccolto il migliore $s\textsubscript{j}$ e $b\textsubscript{k}$ ed è stato fatto il rapporto
-tra i due valori. Se questo è > 1 allora almeno una clique del problema ha creato una separazione migliore del semplice SB
-sulle variabili binarie.\\\pagebreak
-\\Di seguito il grafico ottenuto[Figura 3.1]:\\
-
+tra i due valori. Se il risultato è maggiore di 1 allora almeno una clique del problema ha creato una separazione migliore del semplice SB
+sulle variabili binarie.\\
+Di seguito il grafico ottenuto[Figura 3.1]:
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.7]{chart_agg}
     \caption{Problem ratio}
     \label{fig:ratio}
 \end{figure}
+
 Si può osservare che in molti dei problemi la separazione che va a crearsi è migliore della miglior separazione 
 tramite Strong Branching delle variabili coinvolte nei vincoli. \\
 I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
 8 volte più forte di una separazione traqmite SB. \pagebreak
 \section{Mod011.mps}
 A campione è stato analizzato il problema mod011.mps. La taglia dell'istanza considerata è relativamente piccola
-e non necessita un'aggregazione di dati per essere analizzata. Dal file di output creato è stato realizzato un grafico
+e non necessita un'eccessiva aggregazione di dati per essere analizzata. Dal file di output è stato estratto un grafico
 in cui ogni vincolo di clique del problema è stato messo in confronto con la migliore separazione ottenuta dalle variabili
-contenute nel vincolo stesso tramite SB[Figura 3.2]. L'indice considerato è lo stesso della sezione precedente.\\
+contenute nel vincolo stesso tramite SB e con il miglior score SB fra tutti[Figura 3.2]. L'indice considerato è lo stesso 
+della sezione precedente.\\
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.7]{chart_exp1_mod011}
@@ -390,7 +391,7 @@ contenute nel vincolo stesso tramite SB[Figura 3.2]. L'indice considerato è lo 
     \label{fig:mod011}
 \end{figure}\\
 Si può notare che in relazione alle variabili presenti nel vincolo tutte le separazioni tramite clique risultano più forti 
-e che rispetto alla migliore separazione solo 2 vincoli su 16 risultano inferiori.
+e che rispetto alla migliore separazione solo 2 vincoli su 16 risultano inferiori. 
 \\
 \chapter{Conclusioni}
 \addcontentsline{toc}{chapter}{\bibname}
