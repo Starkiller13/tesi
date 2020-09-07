@@ -6,14 +6,14 @@
 \contentsline {section}{\numberline {1.2}L'algoritmo b\&b}{2}%
 \contentsline {section}{\numberline {1.3}b\&c}{3}%
 \contentsline {section}{\numberline {1.4}Strong Branching}{4}%
-\contentsline {section}{\numberline {1.5}Clique Constraints}{4}%
+\contentsline {section}{\numberline {1.5}Clique Constraints}{5}%
 \contentsline {chapter}{\numberline {2}Strong Branching on Clique Constraint}{7}%
 \contentsline {section}{\numberline {2.1}L'idea}{7}%
 \contentsline {section}{\numberline {2.2}La raccolta dati}{8}%
 \contentsline {subsection}{\numberline {2.2.1}Miplib2003}{10}%
-\contentsline {section}{\numberline {2.3}Software utilizzati}{10}%
+\contentsline {section}{\numberline {2.3}Software utilizzati}{11}%
 \contentsline {chapter}{\numberline {3}Risultati}{13}%
 \contentsline {section}{\numberline {3.1}Considerazioni sui dati ottenuti}{13}%
-\contentsline {section}{\numberline {3.2}Mod011.mps}{15}%
+\contentsline {section}{\numberline {3.2}Mod011.mps}{16}%
 \contentsline {chapter}{\numberline {4}Conclusioni}{17}%
 \contentsline {chapter}{Bibliografia}{17}%

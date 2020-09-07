@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{setspace}
-
+\onehalfspacing
 \graphicspath{ {immagini/} }
 
 \title{Strong Branching on Clique Constraints}
@@ -348,7 +348,7 @@ librerie Numpy e MatplotLib.
 \chapter{Risultati}
 Di seguito alcune considerazioni sui dati ottenuti. Essendo questa un'analisi preliminare della strategia
 non sono stati raccolti i risultati a livello prestazionale ma semplicemente dei grafici e dei numeri 
-utili a capire se questa strategia ha delle possibilità applicative.
+utili a capire se questa strategia ha delle possibilità applicative. 
 
 \section{Considerazioni sui dati ottenuti}
 Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. Il primo indicatore
@@ -361,7 +361,7 @@ numero di variabili comprese nel vincolo di clique. Nel caso il vincolo di cliqu
 produttoria verrà inserito un ulteriore termine $(R(x\textsubscript{1}=0, .., x\textsubscript{n}=0)- R\textsubscript{ref})$.
 Per confronto ad ogni variabile binaria $k\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
 \[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}\] 
-Si può notare che nel caso uno dei valori nella produttoria è 0 allora lo score sarà 0; per ovviare a ciò il 
+Si può notare che nel caso uno dei valori nella produttoria sia 0 allora anche lo score sarà 0; per ovviare a ciò il 
 valore 0 è stato sostituito con 0.01.\\
 Per ogni problema è stato raccolto il migliore $s\textsubscript{j}$ e $b\textsubscript{k}$ ed è stato fatto il rapporto
 tra i due valori. Se il risultato è maggiore di 1 allora almeno una clique del problema ha creato una separazione migliore del semplice SB
@@ -375,9 +375,13 @@ Di seguito il grafico ottenuto[Figura 3.1]:
 \end{figure}
 
 Si può osservare che in molti dei problemi la separazione che va a crearsi è migliore della miglior separazione 
-tramite Strong Branching delle variabili coinvolte nei vincoli. \\
+tramite Strong Branching delle variabili coinvolte nei vincoli. In particolare sugli N problemi testati
+M problemi hanno uno rapporto maggiore di uno e solo K problemi hanno l'indicatore inferiore al valore soglia.
 I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
-8 volte più forte di una separazione traqmite SB. \pagebreak
+8 volte più forte di una separazione traqmite SB. \\\\
+Oltre alla singola separazione sono state fatte delle considerazioni quantitative sul numero di clique che danno un 
+indice $s$ migliore del migliore indice $b$ per ciascun problema.
+\pagebreak
 \section{Mod011.mps}
 A campione è stato analizzato il problema mod011.mps. La taglia dell'istanza considerata è relativamente piccola
 e non necessita un'eccessiva aggregazione di dati per essere analizzata. Dal file di output è stato estratto un grafico
