@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.10)  7 SEP 2020 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  8 SEP 2020 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -74,28 +74,31 @@ File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
 \l__pdf_internal_box=\box45
 ) (/home/_starkiller/Desktop/tesi/tesi.aux
 
+LaTeX Warning: Label `fig:ratio' multiply defined.
+
+
 LaTeX Warning: Label `' multiply defined.
 
 
 LaTeX Warning: Label `' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Info: Redefining \it@ocap on input line 14.
-LaTeX Info: Redefining \it@ccap on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Info: Redefining \it@ocap on input line 13.
+LaTeX Info: Redefining \it@ccap on input line 13.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count183
@@ -118,21 +121,21 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <immagini/logo_unipd.png, id=1, 205.2468pt x 95.3964pt>
 File: immagini/logo_unipd.png Graphic file (type png)
 <use immagini/logo_unipd.png>
-Package pdftex.def Info: immagini/logo_unipd.png  used on input line 20.
+Package pdftex.def Info: immagini/logo_unipd.png  used on input line 19.
 (pdftex.def)             Requested size: 143.67175pt x 66.777pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 22.
+(Font)              <12> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
+(Font)              <6> on input line 21.
 <immagini/logo_dei.png, id=2, 52.2753pt x 161.1621pt>
 File: immagini/logo_dei.png Graphic file (type png)
 <use immagini/logo_dei.png>
-Package pdftex.def Info: immagini/logo_dei.png  used on input line 25.
+Package pdftex.def Info: immagini/logo_dei.png  used on input line 24.
 (pdftex.def)             Requested size: 26.13757pt x 80.58084pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--29
+Underfull \hbox (badness 10000) in paragraph at lines 17--28
 
  []
 
@@ -158,55 +161,52 @@ Capitolo 1.
 <immagini/mip_scheme.png, id=40, 301.125pt x 93.34875pt>
 File: immagini/mip_scheme.png Graphic file (type png)
 <use immagini/mip_scheme.png>
-Package pdftex.def Info: immagini/mip_scheme.png  used on input line 104.
+Package pdftex.def Info: immagini/mip_scheme.png  used on input line 103.
 (pdftex.def)             Requested size: 210.78606pt x 65.34366pt.
 [1
 
 ]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 123.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 122.
 
 [2 </home/_starkiller/Desktop/tesi/immagini/mip_scheme.png>]
-<immagini/cutting_planes.png, id=53, 221.628pt x 210.5466pt>
+<immagini/cutting_planes.png, id=54, 221.628pt x 210.5466pt>
 File: immagini/cutting_planes.png Graphic file (type png)
 <use immagini/cutting_planes.png>
-Package pdftex.def Info: immagini/cutting_planes.png  used on input line 161.
+Package pdftex.def Info: immagini/cutting_planes.png  used on input line 160.
 (pdftex.def)             Requested size: 155.13853pt x 147.3816pt.
- [3] [4 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
-<immagini/cricca.png, id=63, 220.825pt x 216.81pt>
+ [3 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
+<immagini/cricca.png, id=59, 220.825pt x 216.81pt>
 File: immagini/cricca.png Graphic file (type png)
 <use immagini/cricca.png>
-Package pdftex.def Info: immagini/cricca.png  used on input line 192.
+Package pdftex.def Info: immagini/cricca.png  used on input line 191.
 (pdftex.def)             Requested size: 110.41222pt x 108.40472pt.
+ [4] [5 </home/_starkiller/Desktop/tesi/immagini/cricca.png>] [6
+
+]
+Capitolo 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5] [6 </home/_starkiller/Desktop/tesi/immagini/cricca.png>]
-Capitolo 2.
-
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
- [7
-
-] [8]
-Overfull \hbox (18.22906pt too wide) in paragraph at lines 239--302
+ [7] [8]
+Overfull \hbox (18.22906pt too wide) in paragraph at lines 238--301
  [] 
  []
 
 <immagini/output_example.png, id=81, 575.14874pt x 434.62375pt>
 File: immagini/output_example.png Graphic file (type png)
 <use immagini/output_example.png>
-Package pdftex.def Info: immagini/output_example.png  used on input line 313.
+Package pdftex.def Info: immagini/output_example.png  used on input line 312.
 (pdftex.def)             Requested size: 287.57367pt x 217.31134pt.
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 327--338
+Underfull \hbox (badness 10000) in paragraph at lines 326--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--338
+Underfull \hbox (badness 10000) in paragraph at lines 326--337
 
  []
 
@@ -217,38 +217,49 @@ Capitolo 3.
 <immagini/chart_agg.jpg, id=97, 578.16pt x 433.62pt>
 File: immagini/chart_agg.jpg Graphic file (type jpg)
 <use immagini/chart_agg.jpg>
-Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 372.
+Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 371.
 (pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
 
-Overfull \hbox (14.70924pt too wide) in paragraph at lines 372--373
+Overfull \hbox (14.70924pt too wide) in paragraph at lines 371--372
  [][] 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 377--385
-
- []
-
-[14 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-<immagini/chart_exp1_mod011.jpg, id=109, 578.16pt x 433.62pt>
-File: immagini/chart_exp1_mod011.jpg Graphic file (type jpg)
-<use immagini/chart_exp1_mod011.jpg>
-Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 393.
+<immagini/chart_agg2.jpg, id=103, 578.16pt x 433.62pt>
+File: immagini/chart_agg2.jpg Graphic file (type jpg)
+<use immagini/chart_agg2.jpg>
+Package pdftex.def Info: immagini/chart_agg2.jpg  used on input line 385.
 (pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
 
-Overfull \hbox (14.70924pt too wide) in paragraph at lines 393--394
+Overfull \hbox (14.70924pt too wide) in paragraph at lines 385--386
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--400
+Underfull \hbox (badness 10000) in paragraph at lines 376--393
 
  []
 
-[16 </home/_starkiller/Desktop/tesi/immagini/chart_exp1_mod011.jpg>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
+<immagini/chart_exp1_mod011.jpg, id=107, 578.16pt x 433.62pt>
+File: immagini/chart_exp1_mod011.jpg Graphic file (type jpg)
+<use immagini/chart_exp1_mod011.jpg>
+Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 402.
+(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
+
+Overfull \hbox (14.70924pt too wide) in paragraph at lines 402--403
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--409
+
+ []
+
+[15 </home/_starkiller/Desktop/tesi/immagini/chart_agg2.jpg>] [16 </home/_starkiller/Desktop/tesi/immagini/chart_exp1_mod011.jpg>]
 Capitolo 4.
 [17
 
@@ -260,18 +271,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2632 strings out of 480478
- 35721 string characters out of 5905959
- 299836 words of memory out of 5000000
- 18632 multiletter control sequences out of 15000+600000
+ 2640 strings out of 480478
+ 35888 string characters out of 5905960
+ 299831 words of memory out of 5000000
+ 18640 multiletter control sequences out of 15000+600000
  547925 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,9n,26p,827b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,26p,827b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (27 pages, 636516 bytes).
+Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (27 pages, 710301 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 194 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

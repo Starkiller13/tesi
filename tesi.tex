@@ -4,7 +4,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{setspace}
-\onehalfspacing
 \graphicspath{ {immagini/} }
 
 \title{Strong Branching on Clique Constraints}
@@ -380,13 +379,23 @@ M problemi hanno uno rapporto maggiore di uno e solo K problemi hanno l'indicato
 I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
 8 volte più forte di una separazione traqmite SB. \\\\
 Oltre alla singola separazione sono state fatte delle considerazioni quantitative sul numero di clique che danno un 
-indice $s$ migliore del migliore indice $b$ per ciascun problema.
-\pagebreak
+indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].\pagebreak
+\begin{figure}[ht]
+    \centering
+    \includegraphics [scale = 0.7]{chart_agg2}
+    \caption{Problem ratio}
+    \label{fig:ratio}
+\end{figure}\\
+Il grafico mostra la presenza di problemi in cui buona parte dei vincoli di clique hanno uno score maggiore del miglior
+score ottenuto tramite SB delle stesse variabili il che è positivo e rafforza il presentimento che una futura implementazione
+della strategia possa risultare in una buona scelta. Sono 10 i problemi sul campione esaminato in cui il 50\% delle clique
+hanno portato ad una separazione più forte rispetto allo SB.
+
 \section{Mod011.mps}
 A campione è stato analizzato il problema mod011.mps. La taglia dell'istanza considerata è relativamente piccola
 e non necessita un'eccessiva aggregazione di dati per essere analizzata. Dal file di output è stato estratto un grafico
 in cui ogni vincolo di clique del problema è stato messo in confronto con la migliore separazione ottenuta dalle variabili
-contenute nel vincolo stesso tramite SB e con il miglior score SB fra tutti[Figura 3.2]. L'indice considerato è lo stesso 
+contenute nel vincolo stesso tramite SB e con il miglior score SB fra tutti[Figura 3.3]. L'indice considerato è lo stesso 
 della sezione precedente.\\
 \begin{figure}[ht]
     \centering
