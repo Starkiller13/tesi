@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  8 SEP 2020 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  9 SEP 2020 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -167,46 +167,43 @@ Package pdftex.def Info: immagini/mip_scheme.png  used on input line 103.
 
 ]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 122.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 131.
 
 [2 </home/_starkiller/Desktop/tesi/immagini/mip_scheme.png>]
-<immagini/cutting_planes.png, id=54, 221.628pt x 210.5466pt>
+<immagini/cutting_planes.png, id=53, 221.628pt x 210.5466pt>
 File: immagini/cutting_planes.png Graphic file (type png)
 <use immagini/cutting_planes.png>
-Package pdftex.def Info: immagini/cutting_planes.png  used on input line 160.
+Package pdftex.def Info: immagini/cutting_planes.png  used on input line 169.
 (pdftex.def)             Requested size: 155.13853pt x 147.3816pt.
- [3 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
-<immagini/cricca.png, id=59, 220.825pt x 216.81pt>
+ [3] [4 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
+<immagini/cricca.png, id=66, 220.825pt x 216.81pt>
 File: immagini/cricca.png Graphic file (type png)
 <use immagini/cricca.png>
-Package pdftex.def Info: immagini/cricca.png  used on input line 191.
+Package pdftex.def Info: immagini/cricca.png  used on input line 200.
 (pdftex.def)             Requested size: 110.41222pt x 108.40472pt.
- [4] [5 </home/_starkiller/Desktop/tesi/immagini/cricca.png>] [6
+ [5 </home/_starkiller/Desktop/tesi/immagini/cricca.png>] [6
 
 ]
 Capitolo 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7] [8]
-Overfull \hbox (18.22906pt too wide) in paragraph at lines 238--301
+[7] [8]
+Overfull \hbox (23.18478pt too wide) in paragraph at lines 245--308
  [] 
  []
 
 <immagini/output_example.png, id=81, 575.14874pt x 434.62375pt>
 File: immagini/output_example.png Graphic file (type png)
 <use immagini/output_example.png>
-Package pdftex.def Info: immagini/output_example.png  used on input line 312.
+Package pdftex.def Info: immagini/output_example.png  used on input line 319.
 (pdftex.def)             Requested size: 287.57367pt x 217.31134pt.
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 326--337
+Underfull \hbox (badness 10000) in paragraph at lines 333--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--337
+Underfull \hbox (badness 10000) in paragraph at lines 333--344
 
  []
 
@@ -217,10 +214,10 @@ Capitolo 3.
 <immagini/chart_agg.jpg, id=97, 578.16pt x 433.62pt>
 File: immagini/chart_agg.jpg Graphic file (type jpg)
 <use immagini/chart_agg.jpg>
-Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 371.
+Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 385.
 (pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
 
-Overfull \hbox (14.70924pt too wide) in paragraph at lines 371--372
+Overfull \hbox (14.70924pt too wide) in paragraph at lines 385--386
  [][] 
  []
 
@@ -228,34 +225,21 @@ Overfull \hbox (14.70924pt too wide) in paragraph at lines 371--372
 <immagini/chart_agg2.jpg, id=103, 578.16pt x 433.62pt>
 File: immagini/chart_agg2.jpg Graphic file (type jpg)
 <use immagini/chart_agg2.jpg>
-Package pdftex.def Info: immagini/chart_agg2.jpg  used on input line 385.
-(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
+Package pdftex.def Info: immagini/chart_agg2.jpg  used on input line 399.
+(pdftex.def)             Requested size: 375.79955pt x 281.84966pt.
 
-Overfull \hbox (14.70924pt too wide) in paragraph at lines 385--386
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--393
+Underfull \hbox (badness 10000) in paragraph at lines 390--407
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
+[14 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
 <immagini/chart_exp1_mod011.jpg, id=107, 578.16pt x 433.62pt>
 File: immagini/chart_exp1_mod011.jpg Graphic file (type jpg)
 <use immagini/chart_exp1_mod011.jpg>
-Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 402.
-(pdftex.def)             Requested size: 404.70924pt x 303.53192pt.
+Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 416.
+(pdftex.def)             Requested size: 375.79955pt x 281.84966pt.
 
-Overfull \hbox (14.70924pt too wide) in paragraph at lines 402--403
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--409
+Underfull \hbox (badness 10000) in paragraph at lines 409--423
 
  []
 
@@ -273,13 +257,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2640 strings out of 480478
  35888 string characters out of 5905960
- 299831 words of memory out of 5000000
+ 300831 words of memory out of 5000000
  18640 multiletter control sequences out of 15000+600000
  547925 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,9n,26p,827b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,26p,827b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (27 pages, 710301 bytes).
+Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (27 pages, 712957 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams

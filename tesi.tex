@@ -111,6 +111,15 @@ quando nel problema di partenza le stesse variabili appartenevano al dominio deg
 Per la risoluzione di questo tipo di problemi viene generalmente impiegato un algoritmo 
 chiamato “branch and cut”, una versione migliorata dell’algoritmo branch and bound.
 
+\section{Rilassamento lineare}
+Il rilassamento lineare di un problema di programmazione intera mista P è un ulteriore problema di programmazione lineare P* in cui
+tutti i vincoli di interezza vengono rilassati/eliminati. Il problema ottenuto ha più gradi di libertà
+e risulta più semplice e voloce da risolvere. Per risolvere il rilassamento lineare di un problema viene 
+utilizzato l'algoritmo del simplesso: questo algoritmo percorre il perimetro del poliedro ottenuto dalle intersezioni 
+dei vincoli contenuti nell'insieme S alla ricerca della soluzione ottima. Il risultato ottenuto non 
+è detto che sia soluzione del problema di partenza (il nuovo problema non ha vincoli di interezza sulle 
+variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P.
+    
 \section{L'algoritmo b\&b}
 Il b\&b è lo strumento più importante per la soluzione di problemi MIP. Il primo passo del 
 metodo consiste nel rilassamento lineare del problema P di partenza e nelle considerazioni
@@ -185,7 +194,7 @@ vincoli di clique. Posso esprimere un vincolo di clique come segue:
 
 Questi vincoli possono essere rappresentati come una cricca (clique in inglese) ossia un grafo 
 non orientato \[G = (E, V)\] in cui per ogni coppia di vertici \[x,y\:\epsilon\:V\] esiste 
-un arco \[e\:\epsilon\:E\] che li congiunge.\pagebreak
+un arco \[e\:\epsilon\:E\] che li congiunge.
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.5]{cricca.png}
@@ -200,19 +209,17 @@ non sono univocamente definite. Su questa osservazione si basa la tesi.
 \chapter{Strong Branching on Clique Constraint}
 \section{L'idea}
 I vincoli di clique, come visto nel capitolo precedente, hanno un marcato sbilanciamento quando si 
-tratta di fissare una variabile; da questa considerazione è scaturita questa raccolta dati, 
-che si prefigge il compito di raccogliere del materiale per una possibile futura implementazione di una 
-strategia di branching sui vincoli di clique. La SBCC si propone di testare, come nel semplice Strong Branching,
-quale dei vincoli di clique del problema porta un miglioramento nella f.o.. 
-L'obiettivo rimane comunque quello di creare una separazione più forte di quella data dal singolo Strong Branching 
-nel tentativo portare il valore della f.o. il più vicino possibile al valore dell'incumbent e quindi dimostrare
-che la soluzione per ora migliore sia quella ottima.
+tratta di fissare una variabile; da questa considerazione è scaturita questa raccolta dati  
+che si prefigge di raccogliere del materiale per una possibile futura implementazione di una 
+strategia di branching basata sui vincoli di clique. La SBCC si propone di testare, come nel semplice Strong Branching,
+quale dei vincoli di clique del problema porta un abbassamento del gap tra il valore della funzione obiettivo e
+l'incumbent attuale. L'obiettivo è quello di dimostrare che la soluzione attuale sia ottima.
 L'approccio di utilizzare il miglior risultato conosciuto al momento è naturalmente un approccio
-euristico alla pari della strategia Strong Branching.
+euristico alla pari dello Strong Branching.
 La strategia va a creare molti più nodi per ogni separazione rispetto a S.B. ma si può presumere che 
 molti di questi nodi non verranno mai esporati e che saranno eliminati nella fase di pruning; oltre a ciò
 lo Strong Branching fissa solo una variabile per ogni iterazione mentre la nuova strategia andrebbe a fissare 
-il valore a tutte le variabili del vincolo. \\
+il valore a tutte le variabili del vincolo considerato. \\
 Si può osservare inoltre che la strategia proposta non esclude alcuna soluzione ammissibile per il
 problema proprio per la struttura del vincolo di clique.
 
@@ -241,7 +248,7 @@ Di seguito un resoconto sui problemi considerati:
         \hline
         10teams & X &  & momentum2 & X & \\
         \hline
-        a1c1s1 & & X & momentum3 & X & \\
+        a1c1s1 & & X & momentum3 &  & X(no sol) \\
         \hline
         aflow30a & X & & msc98-ip & X & \\
         \hline
@@ -302,9 +309,9 @@ Di seguito un resoconto sui problemi considerati:
 
 Oltre a verificare la presenza o meno di vincoli di clique in questa prima parte del programma
 vengono salvate le posizioni delle variabili binarie e dei vincoli di clique essendo dati 
-utili per la successiva elaborazione.\\ Nella seconda fase vengono risolti 2 rilassamenti 
+necessari per la successiva elaborazione.\\ Nella seconda fase vengono risolti 2 rilassamenti 
 per ogni variabile binaria (impostando prima la variabile a 0 e poi a 1). Per ogni vincolo 
-di <= inoltre viene calcolato il valore del rilassamento con tutte le variabili a 0.\\I valori 
+di disuguaglianza larga (<=) inoltre viene calcolato il valore del rilassamento con tutte le variabili a 0.\\I valori 
 ottenuti dai rilassamenti saranno poi il punto cardine nell'analisi dell'efficacia o meno
 della strategia di branching ipotizzata. \\
 \begin{figure}[ht]
@@ -347,19 +354,26 @@ librerie Numpy e MatplotLib.
 \chapter{Risultati}
 Di seguito alcune considerazioni sui dati ottenuti. Essendo questa un'analisi preliminare della strategia
 non sono stati raccolti i risultati a livello prestazionale ma semplicemente dei grafici e dei numeri 
-utili a capire se questa strategia ha delle possibilità applicative. 
+utili a capire se questa strategia ha delle possibilità applicative. Le elaborazioni sui file sono state
+realizzate con l'utilizzo di Python 3 e le librerie Numpy (per la facilità delle manipolazioni sugli array)
+e Matplotlib (strumento indispensabile per realizzare grafici comprensibili e ben organizzati).
 
 \section{Considerazioni sui dati ottenuti}
 Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. Il primo indicatore
 utilizzato per verificare il potenziale della SBCC è il seguente: per ogni vincolo di clique 
-$j\:\:\epsilon\:\:Cliques$ è stato calcolato un valore
+$J\:\:\epsilon\:\:Cliques$ è stato calcolato un valore
 \[ s\textsubscript{j} = \sqrt[n]{\prod_{i=1}^{n\textsubscript{j}} (R(x\textsubscript{i}=1)-R\textsubscript{ref}) }\] 
 in cui $R(x\textsubscript{i})$ è il valore del rilassamento fissando a 1 la variabile $x\textsubscript{i}$
-del vincolo, $R\textsubscript{ref}$ è il valore del rilassamento del problema iniziale e$n\textsubscript{j}$ è il 
-numero di variabili comprese nel vincolo di clique. Nel caso il vincolo di clique sia di <= nella 
-produttoria verrà inserito un ulteriore termine $(R(x\textsubscript{1}=0, .., x\textsubscript{n}=0)- R\textsubscript{ref})$.
-Per confronto ad ogni variabile binaria $k\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
-\[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}\] 
+del vincolo, $R\textsubscript{ref}$ è il valore del rilassamento del problema iniziale e $n\textsubscript{j}$ è il 
+numero di variabili comprese nel vincolo di clique. Nel caso il vincolo di clique sia di minore-uguale nella 
+produttoria verrà inserito un ulteriore termine $(R(x\textsubscript{1}=0, .., x\textsubscript{n}=0)- R\textsubscript{ref})$ e la radice
+$n-esima$ diventerà $(n+1)-esima$.\\
+Per confronto ad ogni variabile binaria $x\textsubscript{k}\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
+\[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}.\] attribuito per 
+valutare la qualità della separazione che verrebbe ottenuta facendo Strong Branching.\\
+Non si possono confrontare gli score senza la normalizzazione attuata tramite la'aggiunta della radice $n-esima$ nel primo indice
+e della radice $quadrata$ nel secondo perchè lo score nel primo caso andrebbe a lievitare semplicemente per la quantità
+di termini in più rispetto all'indice di SB.
 Si può notare che nel caso uno dei valori nella produttoria sia 0 allora anche lo score sarà 0; per ovviare a ciò il 
 valore 0 è stato sostituito con 0.01.\\
 Per ogni problema è stato raccolto il migliore $s\textsubscript{j}$ e $b\textsubscript{k}$ ed è stato fatto il rapporto
@@ -379,10 +393,10 @@ M problemi hanno uno rapporto maggiore di uno e solo K problemi hanno l'indicato
 I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
 8 volte più forte di una separazione traqmite SB. \\\\
 Oltre alla singola separazione sono state fatte delle considerazioni quantitative sul numero di clique che danno un 
-indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].\pagebreak
+indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].
 \begin{figure}[ht]
     \centering
-    \includegraphics [scale = 0.7]{chart_agg2}
+    \includegraphics [scale = 0.65]{chart_agg2}
     \caption{Problem ratio}
     \label{fig:ratio}
 \end{figure}\\
@@ -399,7 +413,7 @@ contenute nel vincolo stesso tramite SB e con il miglior score SB fra tutti[Figu
 della sezione precedente.\\
 \begin{figure}[ht]
     \centering
-    \includegraphics [scale = 0.7]{chart_exp1_mod011}
+    \includegraphics [scale = 0.65]{chart_exp1_mod011}
     \caption{Mod011 chart}
     \label{fig:mod011}
 \end{figure}\\
@@ -407,6 +421,18 @@ Si può notare che in relazione alle variabili presenti nel vincolo tutte le sep
 e che rispetto alla migliore separazione solo 2 vincoli su 16 risultano inferiori. 
 \\
 \chapter{Conclusioni}
+Nel capitolo precedente sono state raccolte diverse osservazioni e eseguiti alcuni esperimenti per 
+analizzare le potenzialità della strategia. \\Dai risultati ottenuti non si può che concludere che
+fare Strong Branching su Vincoli di Clique possa essere un'idea valida e che non sia da sccartare una 
+futura implementazione della strategia; i dati ci dicono che la migliore separazione fatta tramite SBCC è in media
+diverse volte più forte rispetto alla separazione migliore trovata tramite Strong Branching in più della 
+metà dei problemi analizzati. Si osserva inoltre che 10 istanze su 20 hanno almeno il 50\% dei vincoli di clique il cui score
+è superiore alla miglior separazione tramite SB. Nell'analisi dei file di output inoltre si è visto che in 
+alcune situazioni fissare il valore a 1 nel vincolo portava ad una soluzione impossibile: questa informazione permette 
+per le proprietà del rilassamento lineare di fissare il valore della variabile considerata a 0 e quindi
+avere una variabile in meno da considerare nel problema di partenza.
+
+
 \addcontentsline{toc}{chapter}{\bibname}
 \renewcommand{\bibname}{Bibliografia/Sitografia}
 \begin{thebibliography}{100}
