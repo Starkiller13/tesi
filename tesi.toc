@@ -4,8 +4,8 @@
 \contentsline {chapter}{\numberline {1}Introduzione}{1}%
 \contentsline {section}{\numberline {1.1}MIP}{1}%
 \contentsline {section}{\numberline {1.2}Rilassamento lineare}{2}%
-\contentsline {section}{\numberline {1.3}L'algoritmo b\&b}{2}%
-\contentsline {section}{\numberline {1.4}b\&c}{3}%
+\contentsline {section}{\numberline {1.3}L'algoritmo Branch \& Bound}{2}%
+\contentsline {section}{\numberline {1.4}Branch \& Cut}{3}%
 \contentsline {section}{\numberline {1.5}Strong Branching}{4}%
 \contentsline {section}{\numberline {1.6}Clique Constraints}{4}%
 \contentsline {chapter}{\numberline {2}Strong Branching on Clique Constraint}{7}%

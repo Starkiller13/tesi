@@ -121,10 +121,10 @@ dei vincoli contenuti nell'insieme S alla ricerca della soluzione ottima. Il ris
 è detto che sia soluzione del problema di partenza (il nuovo problema non ha vincoli di interezza sulle 
 variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P.
     
-\section{L'algoritmo b\&b}
-Il b\&b è lo strumento più importante per la soluzione di problemi MIP. Il primo passo del 
-metodo consiste nel rilassamento lineare del problema P di partenza e nelle considerazioni
-successive: se il rilassamento è impossibile allora anche il problema P è impossibile, 
+\section{L'algoritmo Branch \& Bound}
+L'algoritmo Branch \& Bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
+prognammazione intera-mista. Il primo passo del metodo consiste nel rilassamento lineare del problema P di partenza e nelle considerazioni
+successive: se la soluzione del rilassamento è impossibile allora anche il problema P è impossibile, 
 se si è trovata una soluzione al rilassamento e questa è ammissibile per P allora la 
 soluzione è ottima per P, se la soluzione esiste ma non è intera allora il valore f(\textbf{x\textup{*}}) 
 sarà un lower bound del problema di partenza.
@@ -159,8 +159,8 @@ considerazioni:
         alcun miglioramento alla f.o. essendo questi una restrizione del problema a questo nodo. 
 \end{itemize}
 Quando ho finito di esplorare tutti i nodi il valore dell’incumbent (se presente) sarà la soluzione ottima.
-\section{b\&c}
-Il procedimento è analogo a b\&b con l’aggiunta nella fase di bound di piani di taglio. Questi
+\section{Branch \& Cut}
+Il procedimento è analogo a B\&B con l’aggiunta nella fase di bound di piani di taglio. Questi
 piani di taglio sono delle disgiunzioni lineari che riducono lo spazio delle soluzioni
 togliendo dal pool alcune soluzioni non ammissibili per il problema di partenza. In modo
 geometrico prendendo come riferimento un generico politopo posso descrivere un piano di
@@ -182,7 +182,7 @@ ponendo prima come Upper Bound \[UB = \lfloor x \textsubscript{j} \textup{*} \rf
 fornisce una separazione più importante. La separazione più forte sarà quella che verrà 
 preferita nella creazione dei prossimi nodi.
 \section{Clique Constraints}
-I vincoli presi come candidati ad essere un miglioramento dello strong branching sono i 
+I vincoli presi come candidati ad essere un miglioramento dello Strong Branching sono i 
 vincoli di clique. Posso esprimere un vincolo di clique come segue:
 
 \begin{center}
@@ -202,7 +202,7 @@ un arco \[e\:\epsilon\:E\] che li congiunge.
     \caption{Rappresentazione grafica di una Cricca. }
     \label{fig:cricca}
 \end{figure}\\
-Si può notare che questo vincolo è molto sbilanciato quando si parla di decidere se impostare
+Si può notare che questo vincolo è molto sbilanciato quando nel momento in cui bisogna decidere se impostare
 variabile a 0 o a 1: la scelta di mettere una variabile a 1 nel vincolo limita tutte le 
 altre variabili (avranno valore 0) mentre se la stessa variabile viene assegnata a 0 le rimanenti variabili 
 non sono univocamente definite. Su questa osservazione si basa la tesi.
