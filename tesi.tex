@@ -408,15 +408,14 @@ indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].
     \label{fig:ratio}
 \end{figure}\\
 Il grafico mostra la presenza di problemi in cui buona parte dei vincoli di clique hanno uno score maggiore del miglior
-score ottenuto tramite SB delle stesse variabili il che è positivo e rafforza il presentimento che una futura implementazione
+score ottenuto tramite SB delle stesse variabili; questo rafforza il presentimento che una futura implementazione
 della strategia possa risultare in una buona scelta. Sono 12 i problemi sul campione esaminato in cui il 50\% delle clique
 hanno portato ad una separazione più forte rispetto allo SB.
 
 \section{Mod011.mps}
 A campione è stato analizzato il problema mod011.mps. La taglia dell'istanza considerata è relativamente piccola
 e non necessita un'eccessiva aggregazione di dati per essere analizzata. Dal file di output è stato estratto un grafico
-in cui ogni vincolo di clique del problema è stato messo in confronto con la migliore separazione ottenuta dalle variabili
-contenute nel vincolo stesso tramite SB e con il miglior score SB fra tutti[Figura 3.3]. L'indice considerato è lo stesso 
+in cui ogni vincolo di clique del problema è stato messo in confronto con il miglior score SB fra tutti[Figura 3.3]. L'indice considerato è lo stesso 
 della sezione precedente.\\
 \begin{figure}[ht]
     \centering
@@ -424,8 +423,8 @@ della sezione precedente.\\
     \caption{Mod011 chart}
     \label{fig:mod011}
 \end{figure}\\
-Si può notare che in relazione alle variabili presenti nel vincolo tutte le separazioni tramite clique risultano più forti 
-e che rispetto alla migliore separazione solo 2 vincoli su 16 risultano inferiori. 
+Si può notare che solo in 2 casi su 16 le separazioni si sono dimostrate più deboli rispetto allo score
+più alto ottenuto tramite Strong Branching. 
 \\
 \chapter{Conclusioni}
 Nel capitolo precedente sono state raccolte diverse osservazioni e eseguiti alcuni esperimenti per 
