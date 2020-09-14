@@ -1,5 +1,0 @@
-
-Calcolo un fattore di branching per le variabili: sqrt((setTo0-ref)*(setTo1-ref))
-
-Calcolo lo stesso fattore per i vincoli di clique: (a0*a1* .... *an)^(1/n) con aj = (jsetTo1-ref) per j = 0, ..., n;
-Se uno dei due fattori è nullo il prodotto verrà fatto per un numero piccolo, in questo caso 10^-2

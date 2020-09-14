@@ -1,2 +1,0 @@
-MIP: rout.mps
--- Not very interesting --

@@ -1,2 +1,0 @@
-MIP: markshare1.mps
--- Not very interesting --

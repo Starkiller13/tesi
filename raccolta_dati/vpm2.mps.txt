@@ -1,2 +1,0 @@
-MIP: vpm2.mps
--- Not very interesting --

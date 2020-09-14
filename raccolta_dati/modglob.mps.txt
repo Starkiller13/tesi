@@ -1,2 +1,0 @@
-MIP: modglob.mps
--- Not very interesting --

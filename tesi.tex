@@ -68,7 +68,7 @@ Prof. Domenico \textsc{Salvagnin}
 
 \chapter{Sommario}
 La tesi si è sviluppata attorno all’idea di una raccolta dati
-dalla libreria di problemi Miplib2003 concentrandosi principalmente
+dalla libreria di problemi MIPLIB2003 concentrandosi principalmente
 su problemi MIP in cui sono presenti vincoli di clique. 
 Il diverso peso dell’attribuzione dei valori 0 e 1 nei vincoli di 
 questa tipologia suggerisce la possibilità che una strategia di branching basata 
@@ -80,12 +80,11 @@ di questo tipo potrebbe avere del potenziale.
 \mainmatter
 
 \chapter{Introduzione}
-La performance di un algoritmo branch and bound nella programmazione lineare intera mista (MIP)
+La performance di un algoritmo branch-and-bound nella programmazione lineare intera mista (MIP)
 dipende molto dalla qulità del lower bound ottenuto nella ricerca. Un modo per migliorare questo bound
-è quello di introdurre dei tagli nel rilassamento lineare che linitino lo spazio delle soluzioni tenendo traccia
+è quello di introdurre dei tagli nel rilassamento lineare che limitino lo spazio delle soluzioni tenendo traccia
 de vincoli di interezza del problema di partenza e che riducano il gap tra lower bound e incumbent(per dimostrare che la soluzione sia ottima).
-In generale la generazione di tagli efficaci nella riduzione del politopo/poliedro è particolarmente 
-complicata: in questa tesi si è cercato di considerare dei vincoli particolari, detti vincoli di clique,
+Fondamentale è anche la strategia di branching utilizzata: in questa tesi si è cercato di considerare dei vincoli particolari, detti vincoli di clique,
 che data la loro particolare struttura permettono di migliorare il dual bound e contemporaneamente escludere 
 soluzioni non intere. Lo scopo è quello di valutare, come nello Strong Branching (SB), quale vincolo porti un 
 miglioramento/separazione più forte tramite una fase di scoring precedente al branching. La strategia
@@ -93,10 +92,10 @@ ipotizzata è stata chiamata Strong Branching on Clique Constraints (abbreviata 
 
 \section{MIP}
 Nella raccolta dati creata sono stati presi in considerazione dei problemi
-MIP raccolti nella libreria di problemi Miplib2003; questa classe di problemi
+MIP raccolti nella libreria di problemi MIPLIB2003; questa classe di problemi
 di programmazione lineare sono caratterizzati, oltre alla presenza di una funzione
 lineare da minimizzare e di vincoli lineari, dalla presenza di vincoli di interezza
-su un sottoinsieme delle variabili. Posso descrivere un problema MIP in forma compatta
+su un sottoinsieme delle variabili. Possiamo descrivere un problema MIP in forma compatta
 nella seguente formulazione: \pagebreak
 \begin{figure}[ht]
     \centering
@@ -106,8 +105,7 @@ nella seguente formulazione: \pagebreak
 \end{figure}
 \\
 Si può notare che, conseguentemente all’inserimento dei vincoli di interezza delle variabili,
-non possa essere usato direttamente un rilassamento lineare per la soluzione di questo
-problema; il rilassamento ottenuto potrebbe contenere variabili con valore frazionario
+il rilassamento linerare non direttamente il problema; il rilassamento ottenuto potrebbe contenere variabili con valore frazionario
 quando nel problema di partenza le stesse variabili appartenevano al dominio degli interi.
 Per la risoluzione di questo tipo di problemi viene generalmente impiegato un algoritmo 
 chiamato “branch and cut”, una versione migliorata dell’algoritmo branch and bound.
@@ -115,11 +113,11 @@ chiamato “branch and cut”, una versione migliorata dell’algoritmo branch a
 \section{Rilassamento lineare}
 Il rilassamento lineare di un problema di programmazione intera mista P è un ulteriore problema di programmazione lineare P* in cui
 tutti i vincoli di interezza vengono rilassati/eliminati. Il problema ottenuto ha più gradi di libertà
-e risulta più semplice e veloce da risolvere. Per risolvere un rilassamento lineare viene 
-utilizzato l'algoritmo del simplesso: questo algoritmo attraversa i vertici del poliedro ottenuto dalle intersezioni 
+e risulta più semplice e veloce da risolvere. Per risolvere il rilassamento lineare vengono utilizzati principalmente
+due algoritmi: l'algoritmo del simplesso e l'algoritmo BARRIER. Il primo algoritmo attraversa i vertici del poliedro ottenuto dalle intersezioni 
 dei vincoli contenuti nell'insieme S alla ricerca della soluzione ottima. Il risultato ottenuto non 
 è detto che sia soluzione del problema di partenza (il nuovo problema non ha vincoli di interezza sulle 
-variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P.
+variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P. 
     
 \section{L'algoritmo Branch \& Bound}
 L'algoritmo Branch \& Bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
@@ -153,7 +151,7 @@ considerazioni:
                 continuo l'esplorazione dell'albero;
         \end{itemize}
     \item Se il rilassamento ritorna una soluzione non ammissibile per P ma il valore 
-        dell’incumbent è inferiore al valore del rilassamento in questo nodo allora posso
+        dell’incumbent è inferiore o uguale al valore del rilassamento in questo nodo allora posso
         scartare il nodo. Il nodo attuale infatti ha valore del rilassamento superione ad un
         candidato ad essere soluzione ottima di P, quindi i nodi successivi non porterebbero 
         alcun miglioramento alla f.o. essendo questi una restrizione del problema a questo nodo. 
@@ -172,15 +170,21 @@ taglio come segue:\\
     \label{fig:cuts}
 \end{figure}\\
 Trovare dei piani di taglio efficaci riduce notevolmente il tempo di esecuzione e anche se non fosse 
-possibile trovarne al nodo attuale l'algoritmo continuerebbe in stile b\&b.
+possibile trovarne al nodo attuale l'algoritmo continuerebbe in stile B\&B.
 \section{Strong Branching}
 Una delle strategie di branching applicate negli algoritmi B\&B e B\&C è lo Strong Branching:
 questa strategia consiste nel prendere le variabili con vincoli di interezza non soddisfatti
-nel rilassamento del nodo attuale, eseguire per ogni variabile il rilassamento lineare
+nel rilassamento del nodo attuale, risolvere per ogni variabile il rilassamento lineare
 ponendo prima come Upper Bound \[UB = \lfloor x \textsubscript{j} \textup{*} \rfloor\] e poi come Lower Bound 
 \[LB = \lceil x \textsubscript{j} \textup{*} \rceil\] e vedere quale di queste variabili frazionarie
-fornisce una separazione più importante. La separazione più forte sarà quella che verrà 
-preferita nella creazione dei prossimi nodi.
+fornisce una separazione più importante. Per definire la forza di una separazione tramite SB viene assegnato
+ad ogni variabile frazionaria uno score 
+\[score(x\textsubscript{i}) = 
+(R(x\textsubscript{i} = \lceil x\textsubscript{i} \rceil)-R\textsubscript{ref})*(R(x\textsubscript{i} = \lfloor x\textsubscript{i} \rfloor) - R\textsubscript{ref})  \]
+in cui $R\textsubscript{ref}$ è il valore della soluzione del rilassamento lineare del problema di partenza
+e $R(x\textsubscript{i} = \lceil x\textsubscript{i} \rceil),\:(R(x\textsubscript{i} = \lfloor x\textsubscript{i} \rfloor) $ sono i valori ottenuti risolvendo
+il rilassamentodel problema di partenza fissando prima la variabile frazionaria con il suoi arrotondamenti in alto
+o in basso. \\La separazione più forte, ossia con lo score più elevato) sarà quella che verrà preferita nella creazione dei prossimi nodi.
 \section{Clique Constraints}
 I vincoli presi come candidati ad essere un miglioramento dello Strong Branching sono i 
 vincoli di clique. Posso esprimere un vincolo di clique come segue:
@@ -193,13 +197,13 @@ vincoli di clique. Posso esprimere un vincolo di clique come segue:
     $\:variabili\:booleane\:del\:problema$\linebreak
 \end{center}
 
-Questi vincoli possono essere rappresentati come una cricca (clique in inglese) ossia un grafo 
+Questi vincoli possono essere rappresentati come una clique ossia un grafo 
 non orientato \[G = (E, V)\] in cui per ogni coppia di vertici \[x,y\:\epsilon\:V\] esiste 
 un arco \[e\:\epsilon\:E\] che li congiunge.
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.5]{cricca.png}
-    \caption{Rappresentazione grafica di una Cricca. }
+    \caption{Rappresentazione grafica di una clique. }
     \label{fig:cricca}
 \end{figure}\\
 Si può notare che questo vincolo è molto sbilanciato quando nel momento in cui bisogna decidere se impostare
@@ -227,10 +231,10 @@ problema proprio per la struttura del vincolo di clique.
 \section{La raccolta dati}
 Per effettuare delle considerazioni sulla effettiva efficacia della strategia è stata effettuata 
 una raccolta dati prendendo in esame i problemi di programmazione intera-mista(MIP) presenti
-nella libreria Miplib2003. L’algoritmo, scritto in C++ sfruttando le API del risolutore 
+nella libreria MIPLIB2003. L’algoritmo, scritto in C++ sfruttando le API del risolutore 
 commerciale CPLEX 12.10 di IBM, si è concentrato inizialmente in un esame preliminare del 
 problema P in ingresso in cui viene verificata la presenza di vincoli di clique tra i vincoli di P. 
-Successivamente sono stati eseguiti per ogni variabile binaria il rilassamento in altro ed in basso 
+Successivamente sono stati eseguiti per ogni variabile binaria il rilassamento in alto ed in basso 
 (UB  = 0 e LB = 1) e sono stati salvati i valori della funzione obiettivo. \\
 Sono state considerate solo le variabili binarie presenti nei vincoli di clique: un confronto globale
 su tutte le variabili intere sarebbe stato molto costoso computazionalmente e non avrebbe messo bene 
@@ -312,7 +316,7 @@ Oltre a verificare la presenza o meno di vincoli di clique in questa prima parte
 vengono salvate le posizioni delle variabili binarie e dei vincoli di clique essendo dati 
 necessari per la successiva elaborazione.\\ Nella seconda fase vengono risolti 2 rilassamenti 
 per ogni variabile binaria (impostando prima la variabile a 0 e poi a 1). Per ogni vincolo 
-di disuguaglianza larga (<=) inoltre viene calcolato il valore del rilassamento con tutte le variabili a 0.\\I valori 
+di clique di disuguaglianza <= inoltre viene calcolato il valore del rilassamento con tutte le variabili a 0.\\I valori 
 ottenuti dai rilassamenti saranno poi il punto cardine nell'analisi dell'efficacia o meno
 della strategia di branching ipotizzata. \\
 \begin{figure}[ht]
@@ -322,8 +326,8 @@ della strategia di branching ipotizzata. \\
     \label{fig:output}
 \end{figure}
 
-\subsection{Miplib2003}
-I problemi da cui sono state estratte le informazioni sono contenuti nella libreria Miplib2003.
+\subsection{MIPLIB2003}
+I problemi da cui sono state estratte le informazioni sono contenuti nella libreria MIPLIB2003.
 La libreria si configura come una collezione di 60 problemi MIP di natura varia ideali per avere
 un insieme eterogeneo di istanze. La scelta di una libreria datata (i problemi della libreria 
 sono stati formulati dal 1999 al 2003) è stata effettuata consapevolmente data la necessità di avere 
@@ -331,17 +335,15 @@ istanze già risolte (in gran parte) e per la presenza di problemi di piccola ta
 delle osservazioni dettagliate.
 
 \section{Software utilizzati}
-Per raccogliere le informazioni dalla libreria Miplib2003 è stato utilizzato CPLEX si IBM.
-Il programma si distingue in questo ramo dell'informatica per le buone performance della 
-sua implementazione dell'algoritmo del simplesso e per le molte features messe a 
-disposizione all'utente finale.\\
+Per raccogliere le informazioni dalla libreria MIPLIB2003 è stato utilizzato CPLEX si IBM.
+Il software è stato dell'arte in questo ramo dell'informatica.
 Il programma che è stato implementato per la raccolta dati è stato scritto in C++ utilizzando 
 le API del ramo Concert di CPLEX. Queste API, anche se non molto intuitive,
 si sono dimostrate efficaci per l'implementazione del codice, permettendo all'utente di 
 modificare ed esplorare facilmente il problema di partenza. Per le istanze più onerose 
 computazionalmente è stata fondamentale la possibilità di iterare le variabili presenti nel
 vincolo di clique senza dover risolvere tutti i rilassamenti di tutte le variabili booleane 
-(il che avrebbe fatto aumentare esponenzialmente il tempo per la raccolta dati).\\\\
+(riducendo cosi il carico computazionale).\\\\
 
 Per l'elaborazione dei dati sono stati utilizzati i runner appartenenti al Cluster del Dipartimento di Ingegneria 
 dell'Informazione tramite il sistema di somministrazione dei job SLURM: 
@@ -360,8 +362,13 @@ realizzate con l'utilizzo di Python 3 e le librerie Numpy (per la facilità dell
 e Matplotlib (strumento indispensabile per realizzare grafici comprensibili e ben organizzati).
 
 \section{Considerazioni sui dati ottenuti}
-Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. Il primo indicatore
-utilizzato per verificare il potenziale della SBCC è il seguente: per ogni vincolo di clique 
+Data la grande quantità di dati ottenuti risulta necessario aggregare alcuni risultati. 
+Il file di output di ogni problema contiene l'elenco di tutte le cliques del problema 
+ed il valore dei rilassamenti di tutte le variabili coinvolte nei vincoli di clique. Possiamo
+definire l'insieme $Cliques$ come la raccolta di tutti i vincoli di cliques. Un vincolo di clique
+$J$ è definito dalle variabili binarie $x\textsubscript{i}\:\epsilon\:J$ che lo compongono e dalla disguguaglianza che lo distingue (<= 1 oppure == 1). 
+Definisco inoltre come $Binaries$ l'insieme di tutte le variabili coinvolte in almeno un vincolo di clique.
+Il primo indicatore utilizzato per verificare il potenziale della SBCC è il seguente: per ogni vincolo di clique 
 $J\:\:\epsilon\:\:Cliques$ è stato calcolato un valore
 \[ s\textsubscript{j} = \sqrt[n]{\prod_{i=1}^{n\textsubscript{j}} (R(x\textsubscript{i}=1)-R\textsubscript{ref}) }\] 
 in cui $R(x\textsubscript{i})$ è il valore del rilassamento fissando a 1 la variabile $x\textsubscript{i}$
@@ -372,27 +379,26 @@ $n-esima$ diventerà $(n+1)-esima$.\\
 Per confronto ad ogni variabile binaria $x\textsubscript{k}\:\epsilon\:Binaries$ coinvolta in almeno un vincolo di clique è stato assegnato uno score
 \[ b\textsubscript{k} = \sqrt{(R(x\textsubscript{k}=0)-R\textsubscript{ref})*(R(x\textsubscript{k}=1)-R\textsubscript{ref})}.\] attribuito per 
 valutare la qualità della separazione che verrebbe ottenuta facendo Strong Branching.\\
-Non si possono confrontare gli score senza la normalizzazione attuata tramite la'aggiunta della radice $n-esima$ nel primo indice
+Non si possono confrontare gli score senza la normalizzazione attuata tramite l'aggiunta della radice $n-esima$ nel primo indice
 e della radice $quadrata$ nel secondo perchè lo score nel primo caso andrebbe a lievitare semplicemente per la quantità
-di termini in più rispetto all'indice di SB.
+di termini in più rispetto all'indice di SB. 
 Si può notare che nel caso uno dei valori nella produttoria sia 0 allora anche lo score sarà 0; per ovviare a ciò il 
 valore 0 è stato sostituito con 0.01.\\
 Per ogni problema è stato raccolto il migliore $s\textsubscript{j}$ e $b\textsubscript{k}$ ed è stato fatto il rapporto
 tra i due valori. Se il risultato è maggiore di 1 allora almeno una clique del problema ha creato una separazione migliore del semplice SB
-sulle variabili binarie.\\
-Di seguito il grafico ottenuto[Figura 3.1]:
+sulle variabili binarie. Di seguito il grafico ottenuto[Figura 3.1]:
 \begin{figure}[ht]
     \centering
-    \includegraphics [scale = 0.7]{chart_agg}
-    \caption{Problem ratio}
+    \includegraphics [scale = 0.65]{chart_agg}
+    \caption{Problems ratio}
     \label{fig:ratio}
 \end{figure}
-
+\clearpage
 Si può osservare che in molti dei problemi la separazione che va a crearsi è migliore della miglior separazione 
-tramite Strong Branching delle variabili coinvolte nei vincoli. In particolare sugli N problemi testati
-M problemi hanno uno rapporto maggiore di uno e solo K problemi hanno l'indicatore inferiore al valore soglia.
-I risultati ottenuti, come si può vedere, sono promettenti: in media una separazione creata tramite clique risulta
-8 volte più forte di una separazione traqmite SB. \\\\
+tramite Strong Branching delle variabili coinvolte nei vincoli. In particolare sui 23 problemi testati
+20 problemi hanno uno rapporto maggiore uguale a uno e solo 3 problemi hanno l'indicatore inferiore al valore soglia.
+I risultati ottenuti, come si può vedere, sono promettenti: il fatto che il valore della media geometrica sia diverse volte
+al di sopra del valore di soglia va a favore della tesi supportata. \\\\
 Oltre alla singola separazione sono state fatte delle considerazioni quantitative sul numero di clique che danno un 
 indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].
 \begin{figure}[ht]
@@ -403,7 +409,7 @@ indice $s$ migliore del migliore indice $b$ per ciascun problema[Figura 3.2].
 \end{figure}\\
 Il grafico mostra la presenza di problemi in cui buona parte dei vincoli di clique hanno uno score maggiore del miglior
 score ottenuto tramite SB delle stesse variabili il che è positivo e rafforza il presentimento che una futura implementazione
-della strategia possa risultare in una buona scelta. Sono 10 i problemi sul campione esaminato in cui il 50\% delle clique
+della strategia possa risultare in una buona scelta. Sono 12 i problemi sul campione esaminato in cui il 50\% delle clique
 hanno portato ad una separazione più forte rispetto allo SB.
 
 \section{Mod011.mps}

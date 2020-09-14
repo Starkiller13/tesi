@@ -4,7 +4,7 @@ LP relaxation result: -5000
 
 clique constraint 1 -> c300: x100  == 1 
 Var    setTo0      setTo1
-x100[0..1]  -1 -1
+x100[0..1]  -1 -5000
 
 clique constraint 2 -> c396: x9601  + x9702  + x9803  + x9904  == 1 
 Var    setTo0      setTo1
