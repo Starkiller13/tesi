@@ -80,11 +80,11 @@ di questo tipo potrebbe avere del potenziale.
 \mainmatter
 
 \chapter{Introduzione}
-La performance di un algoritmo branch-and-bound nella programmazione lineare intera mista (MIP)
+La performance di un algoritmo branch-\&-bound nella programmazione lineare intera mista (MIP)
 dipende molto dalla qulità del lower bound ottenuto nella ricerca. Un modo per migliorare questo bound
 è quello di introdurre dei tagli nel rilassamento lineare che limitino lo spazio delle soluzioni tenendo traccia
 dei vincoli di interezza del problema di partenza e che riducano il gap tra lower bound e incumbent(per dimostrare che la soluzione sia ottima).
-Questa implementazione con l'aggiunta di tagli si distingue dall'implementazione base dell'algoritmo B\&B e assume il nome di branch-and-cut.
+Questa implementazione con l'aggiunta di tagli si distingue dall'implementazione base dell'algoritmo B\&B e assume il nome di branch-\&-cut.
 Un ulteriore modo per aumentare le prestazioni di questi algoritmi è quello di applicare delle strategie
 di branching: implementare strategie efficaci è fondamentale per ridurre il numero di nodi nell'albero di sottoproblemi che viene creato 
 dagli algoritmi B\&C e B\&B e di conseguenza aumentare le prestazioni.
@@ -112,7 +112,7 @@ Si può notare che, conseguentemente all’inserimento dei vincoli di interezza 
 il rilassamento linerare non direttamente il problema; il rilassamento ottenuto potrebbe contenere variabili con valore frazionario
 quando nel problema di partenza le stesse variabili appartenevano al dominio degli interi.
 Per la risoluzione di questo tipo di problemi viene generalmente impiegato un algoritmo 
-chiamato “Branch and Cut”, una versione migliorata dell’algoritmo Branch and Bound.
+chiamato “branch-\&-cut”, una versione migliorata dell’algoritmo branch-\&-bound.
 
 \section{Rilassamento lineare}
 Il rilassamento lineare di un problema di programmazione intera mista P è un ulteriore problema di programmazione lineare P* in cui
@@ -122,9 +122,12 @@ due algoritmi: l'algoritmo del simplesso e l'algoritmo BARRIER. Il primo algorit
 dei vincoli contenuti nell'insieme S alla ricerca della soluzione ottima. Il risultato ottenuto non 
 è detto che sia soluzione del problema di partenza (il nuovo problema non ha vincoli di interezza sulle 
 variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P. 
+L'algoritmo BARRIER cerca la soluzione ottima partendo da un punto all'interno del politopo delle soluzioni 
+creando un percorso che congiunga i due punti con l'utilizzo di algoritmi predittivi/correttivi. L'algoritmo per funzionare 
+in maniera efficiente necessita di matrici di vincoli dense.
     
-\section{L'algoritmo Branch-\&-Bound}
-L'algoritmo Branch-\&-Bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
+\section{L'algoritmo branch-\&-bound}
+L'algoritmo branch-\&-bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
 prognammazione intera-mista. Il primo passo del metodo consiste nel rilassamento lineare del problema P di partenza e nelle considerazioni
 successive: se la soluzione del rilassamento è impossibile allora anche il problema P è impossibile, 
 se si è trovata una soluzione al rilassamento e questa è ammissibile per P allora la 
@@ -257,7 +260,7 @@ Di seguito un resoconto sui problemi considerati:
         \hline
         10teams & X &  & momentum2 & X & \\
         \hline
-        a1c1s1 & & X & momentum3 &  & X(no sol) \\
+        a1c1s1 & & X & momentum3 &  & X*\\
         \hline
         aflow30a & X & & msc98-ip & X & \\
         \hline
@@ -277,7 +280,7 @@ Di seguito un resoconto sui problemi considerati:
         \hline
         disctom & X & & p2756 & & X \\
         \hline 
-        ds & X & & pk1 & & X \\
+        ds & & X* & pk1 & & X \\
         \hline
         fast0507 & & X & pp08a & & X \\
         \hline
@@ -315,7 +318,9 @@ Di seguito un resoconto sui problemi considerati:
         \hline
     \end{tabular}
 \end{center}
-
+\begin{center}
+    * L'elaborazione ha richiesto troppo tempo.
+\end{center}
 Oltre a verificare la presenza o meno di vincoli di clique in questa prima parte del programma
 vengono salvate le posizioni delle variabili binarie e dei vincoli di clique essendo dati 
 necessari per la successiva elaborazione.\\ Nella seconda fase vengono risolti 2 rilassamenti 
@@ -449,8 +454,9 @@ avere una variabile in meno da considerare nel problema di partenza.
     \bibitem{} Lezioni di Ricerca Operativa, M. Fischetti, 2018;
     \bibitem{} Constraint Integer Programming, T. Achterberg, 2007;
     \bibitem{} Cplex User Manual: \\ 
-    $https://www.ibm.com/support/knowledgecenter/SSSA5P_12.7.1/
-    \\ilog.odms.studio.help/pdf/usrcplex.pdf$
+    $https://www.ibm.com/support/knowledgecenter/SSSA5P_12.7.1/ilog.odms.studio.help/pdf/usrcplex.pdf$
+    \bibitem{} Numpy guide: $https://numpy.org/doc/stable/user/$
+    \bibitem{} Matplotlib guide: $https://matplotlib.org/3.1.1/users/index.html$ 
 \end{thebibliography}
 
 

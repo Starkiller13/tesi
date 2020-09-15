@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {1}Introduzione}{1}%
 \contentsline {section}{\numberline {1.1}MIP}{1}%
 \contentsline {section}{\numberline {1.2}Rilassamento lineare}{3}%
-\contentsline {section}{\numberline {1.3}L'algoritmo Branch-\&-Bound}{3}%
+\contentsline {section}{\numberline {1.3}L'algoritmo branch-\&-bound}{3}%
 \contentsline {section}{\numberline {1.4}Branch-\&-Cut}{5}%
 \contentsline {section}{\numberline {1.5}Strong Branching}{5}%
 \contentsline {section}{\numberline {1.6}Clique Constraints}{6}%
