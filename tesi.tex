@@ -70,7 +70,7 @@ Prof. Domenico \textsc{Salvagnin}
 La tesi si è sviluppata attorno all’idea di una raccolta dati
 dalla libreria di problemi MIPLIB2003 concentrandosi principalmente
 su problemi MIP in cui sono presenti vincoli di clique. 
-Il diverso peso dell’attribuzione dei valori 0 e 1 nei vincoli di 
+Il diverso peso dell’attribuzione dei valori 0 e 1 nelle variabili dei vincoli di 
 questa tipologia suggerisce la possibilità che una strategia di branching basata 
 su questi vincoli possa dare buoni risultati.
 \\L'aggregazione dei dati ottenuti e le considerazioni ottenute da un'analisi 
@@ -83,8 +83,12 @@ di questo tipo potrebbe avere del potenziale.
 La performance di un algoritmo branch-and-bound nella programmazione lineare intera mista (MIP)
 dipende molto dalla qulità del lower bound ottenuto nella ricerca. Un modo per migliorare questo bound
 è quello di introdurre dei tagli nel rilassamento lineare che limitino lo spazio delle soluzioni tenendo traccia
-de vincoli di interezza del problema di partenza e che riducano il gap tra lower bound e incumbent(per dimostrare che la soluzione sia ottima).
-Fondamentale è anche la strategia di branching utilizzata: in questa tesi si è cercato di considerare dei vincoli particolari, detti vincoli di clique,
+dei vincoli di interezza del problema di partenza e che riducano il gap tra lower bound e incumbent(per dimostrare che la soluzione sia ottima).
+Questa implementazione con l'aggiunta di tagli si distingue dall'implementazione base dell'algoritmo B\&B e assume il nome di branch-and-cut.
+Un ulteriore modo per aumentare le prestazioni di questi algoritmi è quello di applicare delle strategie
+di branching: implementare strategie efficaci è fondamentale per ridurre il numero di nodi nell'albero di sottoproblemi che viene creato 
+dagli algoritmi B\&C e B\&B e di conseguenza aumentare le prestazioni.
+In questa tesi si è cercato di considerare dei vincoli particolari, detti vincoli di clique,
 che data la loro particolare struttura permettono di migliorare il dual bound e contemporaneamente escludere 
 soluzioni non intere. Lo scopo è quello di valutare, come nello Strong Branching (SB), quale vincolo porti un 
 miglioramento/separazione più forte tramite una fase di scoring precedente al branching. La strategia
@@ -108,7 +112,7 @@ Si può notare che, conseguentemente all’inserimento dei vincoli di interezza 
 il rilassamento linerare non direttamente il problema; il rilassamento ottenuto potrebbe contenere variabili con valore frazionario
 quando nel problema di partenza le stesse variabili appartenevano al dominio degli interi.
 Per la risoluzione di questo tipo di problemi viene generalmente impiegato un algoritmo 
-chiamato “branch and cut”, una versione migliorata dell’algoritmo branch and bound.
+chiamato “Branch and Cut”, una versione migliorata dell’algoritmo Branch and Bound.
 
 \section{Rilassamento lineare}
 Il rilassamento lineare di un problema di programmazione intera mista P è un ulteriore problema di programmazione lineare P* in cui
@@ -119,8 +123,8 @@ dei vincoli contenuti nell'insieme S alla ricerca della soluzione ottima. Il ris
 è detto che sia soluzione del problema di partenza (il nuovo problema non ha vincoli di interezza sulle 
 variabili) ma il risultato ottenuto è il punto di partenza per la risoluzione del problema P. 
     
-\section{L'algoritmo Branch \& Bound}
-L'algoritmo Branch \& Bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
+\section{L'algoritmo Branch-\&-Bound}
+L'algoritmo Branch-\&-Bound (B\&B) è uno strumento fondamentale per la risoluzione di problemi di 
 prognammazione intera-mista. Il primo passo del metodo consiste nel rilassamento lineare del problema P di partenza e nelle considerazioni
 successive: se la soluzione del rilassamento è impossibile allora anche il problema P è impossibile, 
 se si è trovata una soluzione al rilassamento e questa è ammissibile per P allora la 
@@ -157,7 +161,7 @@ considerazioni:
         alcun miglioramento alla f.o. essendo questi una restrizione del problema a questo nodo. 
 \end{itemize}
 Quando ho finito di esplorare tutti i nodi il valore dell’incumbent (se presente) sarà la soluzione ottima.
-\section{Branch \& Cut}
+\section{Branch-\&-Cut}
 Il procedimento è analogo a B\&B con l’aggiunta nella fase di bound di piani di taglio. Questi
 piani di taglio sono delle disgiunzioni lineari che riducono lo spazio delle soluzioni
 togliendo dal pool alcune soluzioni non ammissibili per il problema di partenza. In modo
