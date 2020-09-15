@@ -165,11 +165,10 @@ considerazioni:
 \end{itemize}
 Quando ho finito di esplorare tutti i nodi il valore dell’incumbent (se presente) sarà la soluzione ottima.
 \section{Branch-\&-Cut}
-Il procedimento è analogo a B\&B con l’aggiunta nella fase di bound di piani di taglio. Questi
-piani di taglio sono delle disgiunzioni lineari che riducono lo spazio delle soluzioni
-togliendo dal pool alcune soluzioni non ammissibili per il problema di partenza. In modo
-geometrico prendendo come riferimento un generico politopo posso descrivere un piano di
-taglio come segue:\\
+Il procedimento è analogo all'algoritmo B\&B con l’aggiunta di piani di taglio nella fase di bound. I
+piani di taglio sono delle disgiunzioni lineari che permettono di restrigere lo spazio delle soluzioni
+togliendo dal pool alcune soluzioni non ammissibili per il problema di partenza. Graficamente,
+ prendendo come riferimento un generico politopo, posso descrivere un piano di taglio come segue:\\
 \begin{figure}[ht]
     \centering
     \includegraphics [scale = 0.7]{cutting_planes.png}
@@ -177,7 +176,7 @@ taglio come segue:\\
     \label{fig:cuts}
 \end{figure}\\
 Trovare dei piani di taglio efficaci riduce notevolmente il tempo di esecuzione e anche se non fosse 
-possibile trovarne al nodo attuale l'algoritmo continuerebbe in stile B\&B.
+possibile trovarne l'algoritmo continuerebbe in stile B\&B.
 \section{Strong Branching}
 Una delle strategie di branching applicate negli algoritmi B\&B e B\&C è lo Strong Branching:
 questa strategia consiste nel prendere le variabili con vincoli di interezza non soddisfatti
@@ -191,18 +190,16 @@ ad ogni variabile frazionaria uno score
 in cui $R\textsubscript{ref}$ è il valore della soluzione del rilassamento lineare del problema di partenza
 e $R(x\textsubscript{i} = \lceil x\textsubscript{i} \rceil),\:(R(x\textsubscript{i} = \lfloor x\textsubscript{i} \rfloor) $ sono i valori ottenuti risolvendo
 il rilassamentodel problema di partenza fissando prima la variabile frazionaria con il suoi arrotondamenti in alto
-o in basso. \\La separazione più forte, ossia con lo score più elevato) sarà quella che verrà preferita nella creazione dei prossimi nodi.
+o in basso. \\La separazione più forte, (ossia quella con lo score più elevato) sarà quella che verrà preferita nella creazione dei prossimi nodi.
+
 \section{Clique Constraints}
 I vincoli presi come candidati ad essere un miglioramento dello Strong Branching sono i 
 vincoli di clique. Posso esprimere un vincolo di clique come segue:
 
-\begin{center}
-    $ 0 \leq \sum\limits_{i \epsilon I}^{} x\textsubscript{i} \leq 1 $  oppure $ \sum\limits_{i \epsilon I}^{} x\textsubscript{i} = 1 $
+    \[ \sum\limits_{i \epsilon I}^{} x\textsubscript{i} \leq 1 \:  oppure \: \sum\limits_{i \epsilon I}^{} x\textsubscript{i} = 1 \]
 
-    $in\:cui\:I\:\acute{e}\:un\:sottoinsieme\:dell'enumerazione\:delle$
-
-    $\:variabili\:booleane\:del\:problema$\linebreak
-\end{center}
+in cui $I$ è un sottoinsieme dell'enumerazione delle
+variabili booleane del problema
 
 Questi vincoli possono essere rappresentati come una clique ossia un grafo 
 non orientato \[G = (E, V)\] in cui per ogni coppia di vertici \[x,y\:\epsilon\:V\] esiste 

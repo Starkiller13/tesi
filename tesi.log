@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  15 SEP 2020 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  15 SEP 2020 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -181,37 +181,37 @@ LaTeX Warning: Command \textellipsis invalid in math mode on input line 137.
 <immagini/cutting_planes.png, id=53, 221.628pt x 210.5466pt>
 File: immagini/cutting_planes.png Graphic file (type png)
 <use immagini/cutting_planes.png>
-Package pdftex.def Info: immagini/cutting_planes.png  used on input line 175.
+Package pdftex.def Info: immagini/cutting_planes.png  used on input line 174.
 (pdftex.def)             Requested size: 155.13853pt x 147.3816pt.
 [4] [5 </home/_starkiller/Desktop/tesi/immagini/cutting_planes.png>]
 <immagini/cricca.png, id=67, 220.825pt x 216.81pt>
 File: immagini/cricca.png Graphic file (type png)
 <use immagini/cricca.png>
-Package pdftex.def Info: immagini/cricca.png  used on input line 212.
+Package pdftex.def Info: immagini/cricca.png  used on input line 209.
 (pdftex.def)             Requested size: 110.41222pt x 108.40472pt.
- [6 </home/_starkiller/Desktop/tesi/immagini/cricca.png>] [7] [8
+ [6] [7 </home/_starkiller/Desktop/tesi/immagini/cricca.png>] [8
 
 ]
 Capitolo 2.
 [9] [10]
-Overfull \hbox (18.22906pt too wide) in paragraph at lines 257--320
+Overfull \hbox (18.22906pt too wide) in paragraph at lines 254--317
  [] 
  []
 
-<immagini/output_example.png, id=87, 575.14874pt x 434.62375pt>
+<immagini/output_example.png, id=86, 575.14874pt x 434.62375pt>
 File: immagini/output_example.png Graphic file (type png)
 <use immagini/output_example.png>
-Package pdftex.def Info: immagini/output_example.png  used on input line 333.
+Package pdftex.def Info: immagini/output_example.png  used on input line 330.
 (pdftex.def)             Requested size: 287.57367pt x 217.31134pt.
 [11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 347--356
+Underfull \hbox (badness 10000) in paragraph at lines 344--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--356
+Underfull \hbox (badness 10000) in paragraph at lines 344--353
 
  []
 
@@ -220,29 +220,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 347--356
 ]
 Capitolo 3.
 [15]
-<immagini/chart_agg.jpg, id=108, 578.16pt x 433.62pt>
+<immagini/chart_agg.jpg, id=107, 578.16pt x 433.62pt>
 File: immagini/chart_agg.jpg Graphic file (type jpg)
 <use immagini/chart_agg.jpg>
-Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 401.
+Package pdftex.def Info: immagini/chart_agg.jpg  used on input line 398.
 (pdftex.def)             Requested size: 375.79955pt x 281.84966pt.
  [16 </home/_starkiller/Desktop/tesi/immagini/chart_agg.jpg>]
-<immagini/chart_agg2.jpg, id=112, 578.16pt x 433.62pt>
+<immagini/chart_agg2.jpg, id=111, 578.16pt x 433.62pt>
 File: immagini/chart_agg2.jpg Graphic file (type jpg)
 <use immagini/chart_agg2.jpg>
-Package pdftex.def Info: immagini/chart_agg2.jpg  used on input line 415.
+Package pdftex.def Info: immagini/chart_agg2.jpg  used on input line 412.
 (pdftex.def)             Requested size: 375.79955pt x 281.84966pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--423
+Underfull \hbox (badness 10000) in paragraph at lines 403--420
 
  []
 
-<immagini/chart_exp1_mod011.jpg, id=113, 578.16pt x 505.89pt>
+<immagini/chart_exp1_mod011.jpg, id=112, 578.16pt x 505.89pt>
 File: immagini/chart_exp1_mod011.jpg Graphic file (type jpg)
 <use immagini/chart_exp1_mod011.jpg>
-Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 431.
+Package pdftex.def Info: immagini/chart_exp1_mod011.jpg  used on input line 428.
 (pdftex.def)             Requested size: 375.79955pt x 328.82458pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--438
+Underfull \hbox (badness 10000) in paragraph at lines 422--435
 
  []
 
@@ -255,7 +255,7 @@ Capitolo 4.
 ] [20
 
 ]
-Overfull \hbox (191.71527pt too wide) in paragraph at lines 457--459
+Overfull \hbox (191.71527pt too wide) in paragraph at lines 454--456
 \OML/cmm/m/it/12 https \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 ==www:ibm:com=support=knowledgecenter=SSSA\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 7\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 =ilog:odms:studio:help=pdf=usrcplex:pdf$ 
  []
 
@@ -272,11 +272,11 @@ Here is how much of TeX's memory you used:
  547925 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,9n,26p,827b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (29 pages, 725390 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
+Output written on /home/_starkiller/Desktop/tesi/tesi.pdf (29 pages, 717769 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
